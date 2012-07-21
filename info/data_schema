@@ -1,0 +1,53 @@
+# http://railscasts.com/episodes/154-polymorphic-association
+# http://railscasts.com/episodes/47-two-many-to-many/
+
+members
+- id
+- first_name
+- last_name
+- email
+- active
+- github_profile
+- major
+- skills
+
+roles
+- id
+- title
+
+projects
+- id
+- title
+- member_lead
+- github_repo
+- readme_file
+
+posts
+- id
+- title
+- author_id
+- timestamp
+- content
+
+comment
+- id
+- author_id
+- timestamp
+- content
+- commentable_id
+- commentable_type
+
+officers
+- id
+- title
+- member_id
+
+members_roles
+- id
+- member_id
+- role_id
+
+members_projects
+- id
+- member_id
+- project_id
