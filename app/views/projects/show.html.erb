@@ -20,6 +20,12 @@
   <%= @project.readme_file %>
 </p>
 
+<b>Members</b>
+<ul>
+    <% @project.members.each do |member| %>
+        <li><%= member.first_name %></li>
+    <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
