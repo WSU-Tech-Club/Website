@@ -43,6 +43,11 @@
     <%= f.label :github_access_token %><br />
     <%= f.text_field :github_access_token %>
   </div>
+  <div class="field">
+    <% @projects.each do |project| %>
+       <%= check_box_tag "member[projects][]", project.id, @member.projects.include?(project) %> <br/> 
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
