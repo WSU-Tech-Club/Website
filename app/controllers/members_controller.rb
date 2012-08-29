@@ -42,7 +42,7 @@ class MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(params[:member])
-
+    params[:member][:project_ids] ||= []
     respond_to do |format|
       if @member.save
         format.html { redirect_to @member, notice: 'Member was successfully created.' }
@@ -58,7 +58,7 @@ class MembersController < ApplicationController
   # PUT /members/1.json
   def update
     @member = Member.find(params[:id])
-    params[:member][:projects] ||= []
+    params[:member][:project_ids] ||= []
     respond_to do |format|
       if @member.update_attributes(params[:member])
         format.html { redirect_to @member, notice: 'Member was successfully updated.' }

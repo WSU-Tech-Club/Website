@@ -45,7 +45,9 @@
   </div>
   <div class="field">
     <% @projects.each do |project| %>
-       <%= check_box_tag "member[projects][]", project.id, @member.projects.include?(project) %> <br/> 
+       <%= check_box_tag :project_ids, project.id, @member.projects.include?(project), :name => "member[project_ids][]" %>
+       <%= label_tag :project_ids, project.title %>
+       <br/> 
     <% end %>
   </div>
   <div class="actions">
