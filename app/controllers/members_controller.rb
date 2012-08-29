@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Members.all
+    @members = Member.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class MembersController < ApplicationController
   # GET /members/1
   # GET /members/1.json
   def show
-    @member = Members.find(params[:id])
+    @member = Member.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class MembersController < ApplicationController
   # GET /members/new
   # GET /members/new.json
   def new
-    @member = Members.new
+    @member = Member.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +34,13 @@ class MembersController < ApplicationController
 
   # GET /members/1/edit
   def edit
-    @member = Members.find(params[:id])
+    @member = Member.find(params[:id])
   end
 
   # POST /members
   # POST /members.json
   def create
-    @member = Members.new(params[:member])
+    @member = Member.new(params[:member])
 
     respond_to do |format|
       if @member.save
@@ -56,7 +56,7 @@ class MembersController < ApplicationController
   # PUT /members/1
   # PUT /members/1.json
   def update
-    @member = Members.find(params[:id])
+    @member = Member.find(params[:id])
 
     respond_to do |format|
       if @member.update_attributes(params[:member])
@@ -72,7 +72,7 @@ class MembersController < ApplicationController
   # DELETE /members/1
   # DELETE /members/1.json
   def destroy
-    @member = Members.find(params[:id])
+    @member = Member.find(params[:id])
     @member.destroy
 
     respond_to do |format|
