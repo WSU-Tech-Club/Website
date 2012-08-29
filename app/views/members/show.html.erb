@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @member.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @member.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @member.email %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @member.active %>
+</p>
+
+<p>
+  <b>Github profile:</b>
+  <%= @member.github_profile %>
+</p>
+
+<p>
+  <b>Major:</b>
+  <%= @member.major %>
+</p>
+
+<p>
+  <b>Skills:</b>
+  <%= @member.skills %>
+</p>
+
+<p>
+  <b>Github access token:</b>
+  <%= @member.github_access_token %>
+</p>
+
+<p>
+  <b>Projects</b>
+  <ul>
+  <% @members.projects.each do |project| %>
+    <li><%=project.title%></li>
+  <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

@@ -1,6 +1,12 @@
 # http://railscasts.com/episodes/154-polymorphic-association
 # http://railscasts.com/episodes/47-two-many-to-many/
 
+roles
+- id
+- title
+
+# rails g scaffold Roles title:string
+
 members
 - id
 - first_name
@@ -8,12 +14,11 @@ members
 - email
 - active
 - github_profile
+- github_access_token
 - major
 - skills
 
-roles
-- id
-- title
+# rails g scaffold Members first_name:string last_name:string email:string active:boolean github_profile:string major:string skills:text github_access_token:string
 
 projects
 - id
@@ -22,12 +27,16 @@ projects
 - github_repo
 - readme_file
 
-posts
+# rails g scaffold Projects title:string member_lead:integer github_repo:string readme_file:string
+
+
+teams
 - id
-- title
-- author_id
-- timestamp
-- content
+- member_id
+- project_id
+
+# rails g model teams member_id:integer project_id:integer
+
 
 comment
 - id
@@ -37,17 +46,27 @@ comment
 - commentable_id
 - commentable_type
 
+# rails g scaffold Comments author_id:integer timestamp:timestamp content:text commentable_id:integer commentable_type:string
+
 officers
 - id
 - title
 - member_id
 
+# rails g scaffold Officers title:string member_id:integer
+
 members_roles
-- id
 - member_id
 - role_id
 
-members_projects
+# rails g scaffold Members_Roles member_id:integer role_id:integer
+
+
+posts
 - id
-- member_id
-- project_id
+- title
+- author_id
+- timestamp
+- content
+
+# rails g scaffold Posts title:string author_id:integer timestamp:timestamp content:text
