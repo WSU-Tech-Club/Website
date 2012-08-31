@@ -1,11 +1,10 @@
-<h1>Listing projects</h1>
+<h1>Projects</h1>
 
 <table class="table">
   <tr>
     <th>Title</th>
-    <th>Member lead</th>
-    <th>Github repo</th>
-    <th>Readme file</th>
+    <th>Lead</th>
+    <th>Github Repo</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,9 +13,14 @@
 <% @projects.each do |project| %>
   <tr>
     <td><%= project.title %></td>
-    <td><%= project.member_lead %></td>
-    <td><%= project.github_repo %></td>
-    <td><%= project.readme_file %></td>
+    <td>
+    <% if project.lead %>
+        <%=project.lead.first_name %>
+    <% else %>
+        No Lead
+    <% end %>    
+    </td>
+    <td><%= link_to project.github_repo, 'http://github.com/WSU-Tech-Club/' + project.github_repo %></td>
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
     <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
