@@ -1,6 +1,6 @@
 <h1>Listing members</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>First name</th>
     <th>Last name</th>
@@ -20,7 +20,13 @@
     <td><%= member.first_name %></td>
     <td><%= member.last_name %></td>
     <td><%= member.email %></td>
-    <td><%= member.active %></td>
+    <td>
+    <% if member.active %>
+        <i class="icon-ok"></i>
+    <% else %>
+        <i class="icon"></i>
+    <% end %>
+    </td>
     <td><%= member.github_profile %></td>
     <td><%= member.major %></td>
     <td><%= member.skills %></td>
