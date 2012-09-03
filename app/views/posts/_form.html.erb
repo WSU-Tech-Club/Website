@@ -1,0 +1,44 @@
+<%= form_for(@post, :html => { :class => "form-horizontal"} ) do |f| %>
+  <legend>Post</legend>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :author_id %>
+
+  <div class="control-group">
+    <%= f.label :title, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :content, :class => "control-label" %>
+    <div class="controls">
+    
+      <div class="btn-group" style="margin-bottom: 3px">
+        <button class="btn">Edit</button>
+        <button class="btn">Preview</button>
+      </div> 
+      <%= f.text_area :content, :class => "span7" %>
+    </div>
+  </div>
+  
+  <div class="form-actions">
+    <% btn_show_name   = "Preview" %>   
+    <% btn_submit_name = "Submit" %>
+    <% btn_submit_name = "Save Changes" if @post.id %>
+    <%= f.submit btn_submit_name, :class => "btn btn-primary"%>
+    <%= button_tag btn_show_name, :class => "btn btn-info" %>
+    <%= button_tag "Cancel", :class => "btn" %>
+  </div>
+<% end %>
