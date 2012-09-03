@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Teams do
+# describe Teams do
   
-end
+# end
