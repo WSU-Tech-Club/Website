@@ -26,9 +26,10 @@ All directions were last tested on 9/2/12 from Ubuntu 12.04LTS
 	update: --no-rdoc --no-ri
 ```
 
-4. Now for the command to install Rails:
+4. Install all the gem dependencies:
 ```shell
-	$ gem install rails -v 3.2.8	## This is the part where we actually install Rails! =D
+	$ gem install bundler 
+    $ bundle install ## This is the part where we actually install Rails! =D, you may run into some package problems
 ```
 
 ### Website configuration
@@ -39,16 +40,8 @@ All directions were last tested on 9/2/12 from Ubuntu 12.04LTS
 	$ cd tech-club-website/
 ```
 
-3. If you don't have a JavaScript runtime (most likely):
+3. Build the database	
 ```shell
-	$ git checkout -b my-branch-to-play-in
-	$ vim Gemfile ## Uncomment "gem 'therubyracer'" under "group :test, :development"
-	$ git commit -am "Enabled therubyracer for a JavaScript runtime"
-```
-
-4. Run the bundler and rake your database.	
-```shell
-	$ bundle install ## A few additional packages may need to be acquired such as libxslt-dev. If a dependency error occurs simply go looking for the -dev version of it in your package manager.
 	$ rake db:migrate
 ```
 
@@ -62,5 +55,7 @@ All directions were last tested on 9/2/12 from Ubuntu 12.04LTS
 3. Profit?????
 
 
+### TODO
+1. Add a list of package dependencies and how to install for common OS Ubuntu/Fedora/Mac OSX
 
 
