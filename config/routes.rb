@@ -1,4 +1,6 @@
 TechClubWebsite::Application.routes.draw do
+  resources :posts
+
   resources :projects
 
   resources :members

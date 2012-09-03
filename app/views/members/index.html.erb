@@ -1,15 +1,14 @@
-<h1>Listing members</h1>
+<%= link_to 'New Member', new_member_path, :class => "btn btn-mini btn-primary pull-right" %>
+<h3>Members</h3>
 
 <table class="table">
   <tr>
-    <th>First name</th>
-    <th>Last name</th>
+    <th>Name</th>
     <th>Email</th>
     <th>Active</th>
-    <th>Github profile</th>
+    <th>Github Profile</th>
     <th>Major</th>
     <th>Skills</th>
-    <th>Github access token</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,8 +16,7 @@
 
 <% @members.each do |member| %>
   <tr>
-    <td><%= member.first_name %></td>
-    <td><%= member.last_name %></td>
+    <td><%= member.full_name %></td>
     <td><%= member.email %></td>
     <td>
     <% if member.active %>
@@ -30,7 +28,6 @@
     <td><%= member.github_profile %></td>
     <td><%= member.major %></td>
     <td><%= member.skills %></td>
-    <td><%= member.github_access_token %></td>
     <td><%= link_to 'Show', member %></td>
     <td><%= link_to 'Edit', edit_member_path(member) %></td>
     <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -38,6 +35,5 @@
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Member', new_member_path %>
+<%= link_to 'New Member', new_member_path, :class => "btn btn-mini btn-primary pull-right" %>

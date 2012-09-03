@@ -1,8 +1,27 @@
 @import "bootstrap";
-
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
 .push20 {
     margin-top: 20px
+}
+
+.push50 {
+    margin-top: 50px
+}
+
+h1,h2 {
+    font-family: "Poiret One"
+}
+
+h1 {
+    font-size: 36px
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: "Droid Sans";
+    font-size: 24px;
+    font-weight: 400;
 }
 
 /*
