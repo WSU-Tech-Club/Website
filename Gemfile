@@ -24,9 +24,7 @@ group :test, :development do
 
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # NOTE: In case of problems with node.js or needing a javascript runtime,
-  # enable the following line.
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 end
 
 group :test do
