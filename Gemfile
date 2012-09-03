@@ -24,6 +24,7 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
 
+gem 'rdiscount'
 
 gem 'jquery-rails'
 
