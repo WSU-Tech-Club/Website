@@ -25,6 +25,7 @@ class MembersController < ApplicationController
   # GET /members/new.json
   def new
     @member = Member.new
+    @projects = Project.all
 
     respond_to do |format|
       format.html # new.html.erb
