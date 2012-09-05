@@ -24,6 +24,16 @@ h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
+.dropdown-hover:hover + ul.dropdown-menu {
+  display: block; 
+}
+
+.dropdown-hover + ul.dropdown-menu:hover {
+  display:block;
+}
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

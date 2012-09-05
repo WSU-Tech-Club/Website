@@ -32,7 +32,9 @@
 
 <p>
   <b>Skills:</b>
-  <%= @member.skills %>
+  <% @member.skill_tags.each do |skill| %>
+    <span class="label label-info"><%= skill %></span>
+  <% end %>
 </p>
 
 <p>
