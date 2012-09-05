@@ -33,6 +33,7 @@ All directions were last tested on 9/2/12 from Ubuntu 12.04LTS
 	$ git clone https://github.com/<your-github-username>/<name-you-gave-for-your-fork>.git tech-club-website
 	$ cd tech-club-website/
 ```
+
 3. Install all the gems and dependencies:
 ```shell
         $ gem install bundler 
