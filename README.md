@@ -36,8 +36,8 @@ All directions were last tested on 9/2/12 from Ubuntu 12.04LTS
 
 3. Install all the gems and dependencies:
 ```shell
-        $ gem install bundler 
-        $ bundle install ## This is the part where we actually install Rails! =D, you may run into some package problems
+  $ gem install bundler 
+  $ bundle install ## This is the part where we actually install Rails! =D, you may run into some package problems
 ```
 
 4. Build the database	
