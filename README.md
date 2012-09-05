@@ -26,12 +26,6 @@ All directions were last tested on 9/2/12 from Ubuntu 12.04LTS
 	update: --no-rdoc --no-ri
 ```
 
-4. Install all the gem dependencies:
-```shell
-	$ gem install bundler 
-    $ bundle install ## This is the part where we actually install Rails! =D, you may run into some package problems
-```
-
 ### Website configuration
 1. Move into the directory where you want the website developement to reside (Example: ~/software-dev/rails-projects/).
 2. Assuming you've already forked the repo on github run (if not, fork the repo on github!):
@@ -39,8 +33,13 @@ All directions were last tested on 9/2/12 from Ubuntu 12.04LTS
 	$ git clone https://github.com/<your-github-username>/<name-you-gave-for-your-fork>.git tech-club-website
 	$ cd tech-club-website/
 ```
+3. Install all the gems and dependencies:
+```shel
+    $ gem install bundler 
+    $ bundle install ## This is the part where we actually install Rails! =D, you may run into some package problems
+```
 
-3. Build the database	
+4. Build the database	
 ```shell
 	$ rake db:migrate
 ```
