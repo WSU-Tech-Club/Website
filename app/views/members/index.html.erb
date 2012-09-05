@@ -23,9 +23,23 @@
         <i class="icon-ok"></i>
     <% end %>
     </td>
-    <td><%= member.github_profile %></td>
+    <td><%= link_to_github member.github_profile %></td>
     <td><%= member.major %></td>
-    <td><%= member.skills %></td>
+    <td>
+      <% if member.skill_tags.length %>
+        <div class="btn-group">
+          <a class="btn dropdown-toggle dropdown-hover" data-toggle="dropdown" href="#">
+            <%= member.skill_tags.first %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <% member.skill_tags.each do |skill| %>
+              <li><a><%= skill %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </td>
     <td><%= link_to 'Show', member %></td>
     <td><%= link_to 'Edit', edit_member_path(member) %></td>
     <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>

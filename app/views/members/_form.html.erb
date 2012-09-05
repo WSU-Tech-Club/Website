@@ -53,20 +53,25 @@
   <div class="control-group">
     <%= f.label :skills, :class => "control-label" %>
     <div class="controls">
-    <div class="input-prepend">
-    <span class="add-on"><i class="icon icon-tags"></i></span>
-    <%= f.text_field :skills, :placeholder => "c, c++, ruby, etc...", :class => "input-xxlarge" %>
-    </div>
+      <div class="input-prepend">
+        <span class="add-on"><i class="icon icon-tags"></i></span><%= f.text_field :skills, :placeholder => "c, c++, ruby, etc...", :class => "input-xxlarge" %>
+      </div>
     </div>
   </div>
   <div class="control-group">
     <%= f.label "Active Projects", :class => "control-label" %>
     <div class="controls">
-    <% @projects.each do |project| %>
-       <%= label_tag :project_ids, :class => "checkbox" do %>
-       <%= check_box_tag :project_ids, project.id, @member.projects.include?(project), :name => "member[project_ids][]" %>
-       <%= project.title %>
-       <% end %>
+    <% if @projects.length > 0 %>
+      <% @projects.each do |project| %>
+         <%= label_tag :project_ids, :class => "checkbox" do %>
+         <%= check_box_tag :project_ids, project.id, @member.projects.include?(project), :name => "member[project_ids][]" %>
+         <%= project.title %>
+         <% end %>
+      <% end %>
+    <% else %>
+      <p style="padding-top: 5px;">
+        <span class="label label-warning"><i class="icon-white icon-warning-sign"></i> No Projects</span> Create a <%= link_to "project", new_project_path %> now.
+      </p>
     <% end %>
     </div>
   </div>

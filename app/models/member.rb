@@ -8,5 +8,8 @@ class Member < ActiveRecord::Base
   def full_name 
     [first_name, last_name].join(' ')
   end
-  
+
+  def skill_tags
+    skills.split(/[,;]/).each { |skill| skill.strip! }
+  end  
 end
