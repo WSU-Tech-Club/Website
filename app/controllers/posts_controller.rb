@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, :flash => { :success => 'Post was successfully created.' } }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, :flash => { :success => 'Post was successfully updated.' } }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
