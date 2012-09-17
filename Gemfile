@@ -37,7 +37,7 @@ group :test do
 end
 
 gem 'rdiscount'
-
+gem 'cancan'
 gem 'jquery-rails'
 
 # To use Jbuilder templates for JSON

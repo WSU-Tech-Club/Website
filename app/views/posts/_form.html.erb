@@ -25,20 +25,18 @@
     <%= f.label :content, :class => "control-label" %>
     <div class="controls">
     
-      <div class="btn-group" style="margin-bottom: 3px">
-        <button class="btn">Edit</button>
-        <button class="btn">Preview</button>
+      <div class="btn-group" style="margin-bottom: -9px">
+        <span class="btn btn-mini " style="border-radius: 3px 3px 0 0;border-bottom:0">Edit</span>
+        <span class="btn btn-mini btn-info" style="border-radius: 3px 3px 0 0;border-bottom:0">Preview</span>
       </div> 
-      <%= f.text_area :content, :class => "span7" %>
+      <%= f.text_area :content, :class => "span7", :style => "border-radius: 0 0 3px" %>
     </div>
   </div>
   
   <div class="form-actions">
-    <% btn_show_name   = "Preview" %>   
     <% btn_submit_name = "Submit" %>
     <% btn_submit_name = "Save Changes" if @post.id %>
     <%= f.submit btn_submit_name, :class => "btn btn-primary"%>
-    <%= button_tag btn_show_name, :class => "btn btn-info" %>
     <%= button_tag "Cancel", :class => "btn" %>
   </div>
 <% end %>
