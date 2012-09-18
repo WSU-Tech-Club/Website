@@ -15,8 +15,6 @@ TechClubWebsite::Application.routes.draw do
 
   resources :projects
 
-  resources :members
-
 
   resources :profiles do
     resources :profile_claims, :path => "claim"

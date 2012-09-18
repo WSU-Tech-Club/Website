@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :member_lead %><br />
-    <%= collection_select(:member, :member_lead, Member.all, :id, :first_name, {:include_blank => ' -- None'}) %>
+    <%= collection_select(:member, :member_lead, Profile.all, :id, :first_name, {:include_blank => ' -- None'}) %>
   </div>
   <div class="field">
     <%= f.label :github_repo %><br />
