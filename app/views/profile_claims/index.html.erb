@@ -1,0 +1,21 @@
+<h3>Pending claims</h3>
+
+<table class="table">
+  <tr>
+    <th>Email</th>
+    <th>Profile</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @profile_claims.each do |profile_claim| %>
+  <tr>
+    <td><%= profile_claim.email %></td>
+    <td><%= link_to profile_claim.profile.full_name, profile_path(profile_claim.profile_id) %></td>
+    <td><%= link_to 'Show', profile_claim %></td>
+    <td><%= link_to 'Edit', edit_profile_claim_path(profile_claim) %></td>
+    <td><%= link_to 'Destroy', profile_claim, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

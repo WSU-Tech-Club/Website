@@ -16,8 +16,8 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :member_lead %><br />
-    <%= collection_select(:member, :member_lead, Member.all, :id, :first_name, {:include_blank => ' -- None'}) %>
+    <%= f.label :developer_lead %><br />
+    <%= collection_select(:project, :developer_lead, Profile.all, :id, :first_name, {:include_blank => ' -- No Lead'}) %>
   </div>
   <div class="field">
     <%= f.label :github_repo %><br />

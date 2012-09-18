@@ -1,6 +1,6 @@
 class Team < ActiveRecord::Base
-  belongs_to :member
+  belongs_to :developer, :class_name => "Profile"
   belongs_to :project
 
-  attr_accessible :member_id, :project_id
+  attr_accessible :developer_id, :project_id
 end

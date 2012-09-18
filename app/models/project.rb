@@ -1,8 +1,8 @@
 class Project < ActiveRecord::Base
   has_many  :teams
-  has_many :members, :through => :teams
+  has_many :developers, :class_name => "Profile",  :through => :teams
 
-  belongs_to :lead, :class_name => "Member", :foreign_key => "member_lead"
+  belongs_to :lead, :class_name => "Profile", :foreign_key => "developer_lead"
 
-  attr_accessible :github_repo, :member_lead, :readme_file, :title
+  attr_accessible :github_repo, :developer_lead, :readme_file, :title
 end

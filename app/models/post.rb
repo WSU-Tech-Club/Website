@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  belongs_to :author, :class_name => "Member", :foreign_key => "author_id"
+  belongs_to :author, :class_name => "Profile", :foreign_key => "author_id"
 
   attr_accessible :author_id, :content, :title
 
