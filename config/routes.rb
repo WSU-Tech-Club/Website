@@ -21,9 +21,9 @@ TechClubWebsite::Application.routes.draw do
   end
 
 
-  #root :to => "pages#show"
+  root :to => "posts#show"
 
-  #match ":id" => "pages#show"
+  match ":id" => "posts#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -74,7 +74,7 @@ TechClubWebsite::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'members#index'
+  # root :to => 'members#index'
 
   # See how all your routes lay out with "rake routes"
 
