@@ -35,7 +35,7 @@
     <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-    
+
     <div class="navbar navbar-fixed-bottom">
       <div class="navbar-inner">
         <div class="container">
@@ -47,43 +47,35 @@
           <a class="brand" href="#">WSUTech</a>
           <div class="container nav-collapse">
             <ul class="nav">
-	      <li><%= link_to_icon "Home", "icon-home icon-white", root_path %></li>
-              <li><%= link_to_icon "Members", "icon-user icon-white", profiles_path %></li>
-              <li><%= link_to_icon "Projects", "icon-folder-open icon-white", projects_path  %></li>
-              <li><%= link_to_icon "Posts", "icon-file icon-white", posts_path  %></li>
-              
+	            <li><%= link_to "Home", root_path %></li>
+              <li class="divider-vertical"></li>
+              <li><%= link_to "Members", profiles_path %></li>
+              <li class="divider-vertical"></li>
+              <li><%= link_to "Projects", projects_path  %></li>
+              <li class="divider-vertical"></li>
+              <li><%= link_to "Posts", posts_path  %></li>
             </ul>
-            <% if current_user %>
-            <div class="btn-group pull-right dropdown">
+            <div class="btn-group pull-right">
               <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-	        <i class="icon-cog"></i> <%= current_user.profile.full_name %> <span class="caret"></span>
+	              <i class="icon-user"></i> <em>Current User</em> <span class="caret"></span>
               </a>
-              <ul class="dropdown-menu span2">
-                <li><%= link_to_icon "Users", "icon-user", users_path  %></li>
-                <li>
-                <%= link_to profile_claims_path do %> 
-                  <i class="icon-retweet"></i>
-                  Profile Claims   
-                  <span class="label label-info"><%= ProfileClaim.all.length %></span>
-                
-                <% end %>
-                </li>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Users", users_path  %></li>
+                <li><%= link_to "Pending Claims", profile_claims_path  %></li>
                 <li class="divider"></li>
-                <li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
-                <li class="divider"></li>
-                <li><a href="<%= logout_path %>"><i class="icon-share"></i> Logout</a></li>
+	              <li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
+	              <li class="divider"></li>
+	              <li><a href="#"><i class="icon-share"></i> Logout</a></li>
               </ul>
             </div>
-            <% else %>
-              <%= form_tag sessions_path, :class => "form-inline pull-right", :style => "margin-bottom:0px" do %>
-                <%= text_field_tag :email, params[:email], :class => "input-small", :placeholder => "Email" %>
-                <%= password_field_tag :password, nil, :class => "input-small", :placeholder => "Password" %>
-                <!--<label class="checkbox">
-                  <input type="checkbox"> Remember me
-                </label>-->
-                <button type="submit" class="btn">Sign in</button>
-              <% end %>
-            <% end %>
+            <form class="form-inline pull-right" style="margin-bottom:0px">
+              <input type="text" class="input-small" placeholder="Email">
+              <input type="password" class="input-small" placeholder="Password">
+              <!--<label class="checkbox">
+                <input type="checkbox"> Remember me
+              </label>-->
+              <button type="submit" class="btn">Sign in</button>
+            </form>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -112,7 +104,7 @@
       </div><!--/content-->
 
       <footer>
-        <small>&copy; WSUTech Club @ Washington State University 2012</small>
+        <p>&copy; Company 2012</p>
       </footer>
 
     </div> <!-- /container -->

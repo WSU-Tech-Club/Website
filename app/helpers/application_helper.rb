@@ -8,4 +8,11 @@ module ApplicationHelper
       end 
   end
 
+  def link_to_icon (name, icon, path)
+    link_to path do
+      "<i class=\"#{icon}\"></i> #{name}".html_safe 
+    end
+  end
+
+
 end

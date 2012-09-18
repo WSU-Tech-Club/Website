@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120831233901) do
+ActiveRecord::Schema.define(:version => 20120917171618) do
 
   create_table "members", :force => true do |t|
     t.string   "first_name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120831233901) do
     t.string   "github_access_token"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.string   "password_digest"
   end
 
   create_table "posts", :force => true do |t|
@@ -32,6 +33,26 @@ ActiveRecord::Schema.define(:version => 20120831233901) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "profile_claims", :force => true do |t|
+    t.string   "email"
+    t.integer  "profile_id"
+    t.string   "token"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "active"
+    t.string   "github_profile"
+    t.string   "major"
+    t.text     "skills"
+    t.string   "github_access_token"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "projects", :force => true do |t|
@@ -48,6 +69,14 @@ ActiveRecord::Schema.define(:version => 20120831233901) do
     t.integer  "project_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.integer  "profile_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

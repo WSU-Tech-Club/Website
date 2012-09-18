@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @profile.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @profile.last_name %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @profile.active %>
+</p>
+
+<p>
+  <b>Github profile:</b>
+  <%= @profile.github_profile %>
+</p>
+
+<p>
+  <b>Major:</b>
+  <%= @profile.major %>
+</p>
+
+<p>
+  <b>Skills:</b>
+  <%= @profile.skills %>
+</p>
+
+<p>
+  <b>Github access token:</b>
+  <%= @profile.github_access_token %>
+</p>
+
+
+<% if @profile.profile_claim %>
+  <p>
+    Profile has a request out to be claimed by <%= @profile.profile_claim.email %> - <%= link_to 'Destroy', [@profile, @profile.profile_claim], confirm: 'Are you sure?', method: :delete %>
+  </p>
+<% end %>
+
+<% if @profile.user %>
+  <p>
+    Profile has been claimed by <%= @profile.user.email %> - <%= link_to 'Destroy', @profile.user, confirm: 'Are you sure?', method: :delete %>
+  </p>
+<% end %>
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
+<%= link_to 'Send Profile Claim', new_profile_profile_claim_path(@profile) unless @profile.profile_claim || @profile.user %>

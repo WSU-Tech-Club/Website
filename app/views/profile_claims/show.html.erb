@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @profile_claim.email %>
+</p>
+
+<p>
+  <b>Profile:</b>
+  <%= @profile_claim.profile_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_profile_claim_path(@profile_claim) %> |
+<%= link_to 'Back', profile_claims_path %>

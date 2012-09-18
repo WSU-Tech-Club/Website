@@ -1,0 +1,30 @@
+<%= form_tag sessions_path do %>
+  <div class="field">
+    <%= label_tag :email %>
+    <%= text_field_tag :email, params[:email] %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+  <div class="actions"><%= submit_tag "Log in" %></div>
+<% end %>
+
+<div class="container">
+	<div class="row">
+		<div class="span4 offset4 well">
+			<legend>Please Sign In</legend>
+          	<div class="alert alert-error">
+                <a class="close" data-dismiss="alert" href="#">×</a>Incorrect Username or Password!
+            </div>
+			<%= form_tag sessions_path do %>
+			<%= text_field_tag :email, params[:email] %>
+			<%= password_field_tag :password %>
+            <label class="checkbox">
+            	<input type="checkbox" name="remember" value="1"> Remember Me
+            </label>
+			<button type="submit" name="submit" class="btn btn-info btn-block">Sign in</button>
+			<% end %>   
+		</div>
+	</div>
+</div>

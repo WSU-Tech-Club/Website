@@ -1,9 +1,31 @@
 TechClubWebsite::Application.routes.draw do
+
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login"  => "sessions#new",     :as => "login"
+
+  resources :sessions 
+
+  resources :profile_claims
+
+  resources :profiles
+
+  resources :users
+
   resources :posts
 
   resources :projects
 
   resources :members
+
+
+  resources :profiles do
+    resources :profile_claims, :path => "claim"
+  end
+
+
+  #root :to => "pages#show"
+
+  #match ":id" => "pages#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
