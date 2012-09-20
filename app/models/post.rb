@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :author, :class_name => "Profile", :foreign_key => "author_id"
+  has_many :comments, :as => :commentable
 
   attr_accessible :author_id, :content, :title
 

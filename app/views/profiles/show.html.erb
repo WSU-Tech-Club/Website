@@ -1,39 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>First name:</b>
-  <%= @profile.first_name %>
-</p>
 
-<p>
-  <b>Last name:</b>
-  <%= @profile.last_name %>
-</p>
+<div class="span12">
+  <div class="row">
+    <div class="span1"><%= image_tag avatar_url(@profile), :class => "thumbnail" %></div>
+    <div class="span11">
+      <h3><%= @profile.full_name %></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span6">
+      <dl class="dl-horizontal">
+        <dt>Major</dt>
+        <dd><%= @profile.major %></dd>
+        
+        <dt>Active</dt>
+        <dd>
+        <% if @profile.active %>
+            <i class="icon-ok"></i>
+        <% end %>
+        </dd>
+    
+        <dt>Github</dt>
+        <dd><%= link_to_github(@profile.github_profile) %></dd>
+      </dl>
+    </div>
+    <div class="span6">
+      <strong><p>Skills</p></strong>
+      <% if @profile.skill_tags.length %>
+        <% @profile.skill_tags.each do |skill| %>
+          <span class="label label-info" style="line-height:25px"><%= skill %></span>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Projects</h3>
+      
+    </div>
 
-<p>
-  <b>Active:</b>
-  <%= @profile.active %>
-</p>
+  </div>
 
-<p>
-  <b>Github profile:</b>
-  <%= @profile.github_profile %>
-</p>
 
-<p>
-  <b>Major:</b>
-  <%= @profile.major %>
-</p>
+</div>
 
-<p>
-  <b>Skills:</b>
-  <%= @profile.skills %>
-</p>
-
-<p>
-  <b>Github access token:</b>
-  <%= @profile.github_access_token %>
-</p>
 
 
 <% if @profile.profile_claim %>
