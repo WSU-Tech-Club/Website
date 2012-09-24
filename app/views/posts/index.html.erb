@@ -1,30 +1,32 @@
-<%= link_to 'New Post', new_post_path, :class => "btn btn-mini btn-primary pull-right" %>
-<h3>Posts</h3>
+<div class="span12">
+  <%= link_to 'New Post', new_post_path, :class => "btn btn-mini btn-primary pull-right" %>
+  <h3>Posts</h3>
 
-<table class="table">
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Posted</th>
-    <th>Modified</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table class="table">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Posted</th>
+      <th>Modified</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.author.first_name %></td>
-    <td><%= post.created_at %></td>
-    <td><%= post.updated_at %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.author.first_name %></td>
+      <td><%= post.created_at %></td>
+      <td><%= post.updated_at %></td>
+      <td><%= link_to 'Show', post %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New Post', new_post_path, :class => "btn btn-mini btn-primary pull-right" %>
+  <%= link_to 'New Post', new_post_path, :class => "btn btn-mini btn-primary pull-right" %>
+</div>

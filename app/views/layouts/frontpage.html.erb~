@@ -89,20 +89,33 @@
       </div>
     </div>
 
-    <div class="wrapper">
-    <div class="container">
-      <header class="page-header">
+    <div class="container push20">
+      <div class="page-header"> 
           <h1>WSU Tech Club <small>We build awesome shit</small></h1>
-      </header>
-     
-      <div class="row">
-        <%= yield %>
-      </div>
-    </div>
-    <div class="push"></div>
-    </div>
+     </div> 
+      <div class="content push50">
+        <div class="row">
+           <div class="span12">
+              <%= yield %>
+            </div>
+            <div class="span3" style="display:none">
+              <div class="well" style="padding: 8px 0">
+                <ul class="nav nav-list">
+                  <li class="nav-header">Recent Posts</li>
+                  <li><%= link_to "Link1", "/path1"  %></li>
+                  <li><%= link_to "Link2", "/path2"  %></li>
+                  <li><%= link_to "Link3", "/path3"  %></li>
+                </ul>
+              </div><!--/.well -->
+            </div><!--/span-->
+        </div><!--/row-->
+      </div><!--/content-->
 
+      <footer>
+        <small>&copy; WSUTech Club @ Washington State University 2012</small>
+      </footer>
 
+    </div> <!-- /container -->
 
     <!-- Javascripts
     ================================================== -->

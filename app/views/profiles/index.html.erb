@@ -1,62 +1,64 @@
-<%= link_to 'New Profile', new_profile_path, :class => "btn btn-mini btn-primary pull-right" %>
-<h3>Members</h3>
+<div class="span12">
+  <%= link_to 'New Profile', new_profile_path, :class => "btn btn-mini btn-primary pull-right" %>
+  <h3>Members</h3>
 
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th>Active</th>
-    <th>Claimed</th>
-    <th>Github profile</th>
-    <th>Major</th>
-    <th>Skills</th>
-    <th>Github access token</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Active</th>
+      <th>Claimed</th>
+      <th>Github profile</th>
+      <th>Major</th>
+      <th>Skills</th>
+      <th>Github access token</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @profiles.each do |profile| %>
-  <tr>
-    <td><%= profile.full_name %></td>
-    <td>
-    <% if profile.active %>
-        <i class="icon-ok"></i>
-    <% end %>
-    </td>
-    <td>
-      <% if profile.profile_claim %>
-        <span class="label label-warning">Pending</span>
-      <% elsif profile.user %>
-        <span class="label">Claimed</span>
-      <% else %>
-        <span class="label label-info">No User</span>
+  <% @profiles.each do |profile| %>
+    <tr>
+      <td><%= profile.full_name %></td>
+      <td>
+      <% if profile.active %>
+          <i class="icon-ok"></i>
       <% end %>
+      </td>
+      <td>
+        <% if profile.profile_claim %>
+          <span class="label label-warning">Pending</span>
+        <% elsif profile.user %>
+          <span class="label">Claimed</span>
+        <% else %>
+          <span class="label label-info">No User</span>
+        <% end %>
 
-    </td>
-    <td><%= link_to_github profile.github_profile %></td>
-    <td><%= profile.major %></td>
-    <td>
-      <% if profile.skill_tags.length %>
-        <div class="btn-group">
-          <a class="btn dropdown-toggle dropdown-hover" data-toggle="dropdown" href="#">
-            <%= profile.skill_tags.first %>
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <% profile.skill_tags.each do |skill| %>
-              <li><a><%= skill %></a></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </td>
-    <td><%= profile.github_access_token %></td>
-    <td><%= link_to 'Show', profile %></td>
-    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-    <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+      </td>
+      <td><%= link_to_github profile.github_profile %></td>
+      <td><%= profile.major %></td>
+      <td>
+        <% if profile.skill_tags.length %>
+          <div class="btn-group">
+            <a class="btn dropdown-toggle dropdown-hover" data-toggle="dropdown" href="#">
+              <%= profile.skill_tags.first %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <% profile.skill_tags.each do |skill| %>
+                <li><a><%= skill %></a></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </td>
+      <td><%= profile.github_access_token %></td>
+      <td><%= link_to 'Show', profile %></td>
+      <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+      <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
 
 
-<%= link_to 'New Profile', new_profile_path, :class => "btn btn-mini btn-primary pull-right" %>
+  <%= link_to 'New Profile', new_profile_path, :class => "btn btn-mini btn-primary pull-right" %>
+</div>

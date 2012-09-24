@@ -31,33 +31,7 @@ h2, h3, h4, h5, h6 {
 .dropdown-hover + ul.dropdown-menu:hover {
   display:block;
 }
-html, body 
-{
-  height: 100%
-}
-/*
-footer
-{	
-  color: #666;
-  margin-top: 100px;
-  background: #222;
-  padding: 17px 0 18px 0;
-  border-top: 1px solid #000;
-}
-*/
-.wrapper 
-{
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -63px;
-}
 
-.push
-{
-  height: 63px;
-}
-.wrapper > .container { padding-top: 20px }	
 
 
 /*
