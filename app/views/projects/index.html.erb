@@ -1,32 +1,34 @@
-<%= link_to 'New Project', new_project_path, :class => "btn btn-mini btn-primary pull-right" %>
-<h3>Projects</h3>
+ <div class="span12">
+   <%= link_to 'New Project', new_project_path, :class => "btn btn-mini btn-primary pull-right" %>
+  <h3>Projects</h3>
 
-<table class="table">
-  <tr>
-    <th>Title</th>
-    <th>Lead</th>
-    <th>Github Repo</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table class="table">
+    <tr>
+      <th>Title</th>
+      <th>Lead</th>
+      <th>Github Repo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.title %></td>
-    <td>
-    <% if project.lead %>
-        <%=project.lead.first_name %>
-    <% else %>
-        No Lead
-    <% end %>    
-    </td>
-    <td><%= link_to project.github_repo, 'http://github.com/WSU-Tech-Club/' + project.github_repo %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.title %></td>
+      <td>
+      <% if project.lead %>
+          <%=project.lead.first_name %>
+      <% else %>
+          No Lead
+      <% end %>    
+      </td>
+      <td><%= link_to project.github_repo, 'http://github.com/WSU-Tech-Club/' + project.github_repo %></td>
+      <td><%= link_to 'Show', project %></td>
+      <td><%= link_to 'Edit', edit_project_path(project) %></td>
+      <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<%= link_to 'New Project', new_project_path, :class => "btn btn-mini btn-primary pull-right" %>
+  <%= link_to 'New Project', new_project_path, :class => "btn btn-mini btn-primary pull-right" %>
+</div>

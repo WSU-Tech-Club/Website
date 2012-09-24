@@ -1,13 +1,8 @@
-<% flash.each do |alert, message| %>
-<div class="alert alert-<%= alert.to_s %>">
-  <button type="button" class="close" data-dismiss="alert">×</button>
-  <%= message %>
-</div>
-<% end %>
+<p>Fron  Page</p>
 
 <% if @post %>
 <div class="row span12">
-  <h2><%= @post.title %></h2>
+  <h2><a href=#"><%= @post.title %></a></h2>
 </div>
 <div class="row span12" style="font-size:15px;margin-top: 15px;margin-bottom:15px">
   <%= @post.html.html_safe %>
@@ -28,5 +23,4 @@
   <h4>Op snap!</h4>
   <p>It doesn't appear like there are any posts yet.</p>
 </div>
-
 <% end %>

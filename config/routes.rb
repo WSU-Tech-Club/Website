@@ -1,10 +1,12 @@
 TechClubWebsite::Application.routes.draw do
 
-  resources :comments
+  get "front_page/index"
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login"  => "sessions#new",     :as => "login"
 
+  resources :comments
+  
   resources :sessions 
 
   resources :profile_claims
@@ -23,7 +25,7 @@ TechClubWebsite::Application.routes.draw do
   end
 
 
-  root :to => "posts#show"
+  root :to => "front_page#index"
 
   match ":id" => "posts#show"
 
