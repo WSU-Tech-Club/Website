@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(:version => 20120917171618) do
     t.string   "github_access_token"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
-    t.string   "password_digest"
   end
 
   create_table "projects", :force => true do |t|
