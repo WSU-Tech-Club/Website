@@ -1,8 +1,9 @@
 # Configuration and Setup Instructions
 This documentation applies to and should work on any Linux distro (if you know what you're doing).
-All directions were last tested on 9/2/12 from Ubuntu 12.04LTS
 
-### Ruby and Rails configuration
+All directions were last tested on NEVER (anybody want to test these? LOL).
+
+### Ruby configuration
 1. From the command line let's install rvm and Ruby:
 ```shell
 	$ cd ~	## To be safe, switch to your home directory.
@@ -37,7 +38,7 @@ All directions were last tested on 9/2/12 from Ubuntu 12.04LTS
 3. Install all the gems and dependencies:
 ```shell
   $ gem install bundler 
-  $ bundle install ## This is the part where we actually install Rails! =D, you may run into some package problems
+  $ bundle install ## You may run into some package problems
 ```
 
 4. Build the database	
@@ -51,8 +52,7 @@ All directions were last tested on 9/2/12 from Ubuntu 12.04LTS
 	$ guard
 ```
 
-2. See what's broken, fix and save, and like magic it updates itself.
-3. Profit?????
+2. That's it! Go ahead and give yerself a pat on the back!
 
 
 ### TODO
