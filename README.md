@@ -47,12 +47,17 @@ All directions were last tested on NEVER (anybody want to test these? LOL).
 ```
 
 ### Testing configuration
-1. Let Guard run in its own terminal window:
+1. Prepare the test database
+```shell
+	$ rake db:test:prepare
+```
+
+2. Let Guard run in its own terminal window:
 ```shell
 	$ guard
 ```
 
-2. That's it! Go ahead and give yerself a pat on the back!
+3. That's it! Go ahead and give yerself a pat on the back!
 
 
 ### TODO
