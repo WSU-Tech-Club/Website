@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: profile_claims
+#
+#  id         :integer          not null, primary key
+#  email      :string(255)
+#  profile_id :integer
+#  token      :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class ProfileClaim < ActiveRecord::Base
   belongs_to :profile
 
